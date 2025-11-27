@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Prediction Result</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">AI Student Performance</a>
+      <div>
+        <a class="btn btn-outline-light btn-sm me-2" href="/dashboard">Dashboard</a>
+        <a class="btn btn-outline-info btn-sm" href="/analysis">Analysis</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="card p-4 text-center">
+      <h2 class="mb-3">Predicted Result</h2>
+
+      <h4>Your Marks: <span class="text-success">{{ marks }}</span></h4>
+      <h4>Grade: 
+        <span class="badge 
+          {% if grade == 'A+' %} bg-success 
+          {% elif grade == 'A' %} bg-primary 
+          {% elif grade == 'B' %} bg-warning 
+          {% elif grade == 'C' %} bg-danger 
+          {% else %} bg-dark {% endif %}">
+          {{ grade }}
+        </span>
+      </h4>
+    </div>
+
+    <div class="card p-4 mt-4">
+      <h5>AI Suggestions for You</h5>
+      <ul>
+        {% for s in suggestions %}
+          <li>{{ s }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="/" class="btn btn-primary">Make Another Prediction</a>
+      <a href="/dashboard" class="btn btn-outline-info">Go to Dashboard</a>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

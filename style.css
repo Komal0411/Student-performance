@@ -1,0 +1,52 @@
+/* Light Theme Variables (Default) */
+:root {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #05070a;
+  --muted: #181717;
+  --accent: #4fb0c6;
+}
+
+/* Dark Theme – Applied Using .dark-mode Class */
+.dark-mode {
+  --bg: #0f1720;
+  --card: #111419;
+  --text: #0e0e0e;
+  --muted: #eff3f7;
+  --accent: #4fb0c6;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto;
+}
+
+/* Card & Form */
+.card.feature {
+  background: var(--card);
+  color: var(--text);
+}
+.form-control {
+  background: var(--card);
+  color: var(--text);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(90deg, #0f9fbf, #2fb8b3);
+  border: none;
+  color: rgb(11, 11, 11);
+}
+.btn-outline-success {
+  border-color: rgba(18, 18, 18, 0.3);
+  color: var(--text);
+}
+
+/* Pagination */
+.pagination .page-link {
+  color: var(--text);
+  background: var(--card);
+}
