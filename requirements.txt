@@ -1,0 +1,7 @@
+flask
+pandas
+scikit-learn
+plotly
+python-dateutil
+sqlite3
+numpy
